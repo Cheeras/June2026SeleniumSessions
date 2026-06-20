@@ -1,0 +1,66 @@
+Case 1: driver.quit()
+=====================
+
+        WebDriver driver = new ChromeDriver();
+        what is session id 
+        ChromeDriver: chrome on windows (6f08dbcbe29aefeae508119c66c8d9d2)
+		driver.get("https://www.google.com");
+		ChromeDriver: chrome on windows (6f08dbcbe29aefeae508119c66c8d9d2)
+		String title = driver.getTitle();
+		ChromeDriver: chrome on windows (6f08dbcbe29aefeae508119c66c8d9d2)
+		System.out.println(title);
+		
+		String url = driver.getCurrentUrl();
+		ChromeDriver: chrome on windows (6f08dbcbe29aefeae508119c66c8d9d2)
+		System.out.println(url);
+		ChromeDriver: chrome on windows (6f08dbcbe29aefeae508119c66c8d9d2)
+	
+		driver.quit();//after execution of this statement driver will become null
+		ChromeDriver: chrome on windows (null)
+		
+		/*
+		 * i want to fix this issue again launch the driver again
+		 * driver = new ChromeDriver();
+		 * */
+		driver = new ChromeDriver();
+		System.out.println(driver.getTitle());
+		//org.openqa.selenium.NoSuchSessionException
+		//Session ID is null. Using WebDriver after calling quit()?
+		
+======================================================================================================
+Case 2: driver.close()
+======================
+
+        WebDriver driver = new ChromeDriver();
+        what is the session id here
+        ChromeDriver: chrome on windows (778321efefec165eeee75dbfaf803532)
+        
+		driver.get("https://www.google.com");
+		ChromeDriver: chrome on windows (778321efefec165eeee75dbfaf803532)
+		String title = driver.getTitle();
+		ChromeDriver: chrome on windows (778321efefec165eeee75dbfaf803532)
+		System.out.println(title);
+		
+		String url = driver.getCurrentUrl();
+		ChromeDriver: chrome on windows (778321efefec165eeee75dbfaf803532)
+		System.out.println(url);
+	
+		driver.close();//after execution of this statement driver session id still 
+		ChromeDriver: chrome on windows (778321efefec165eeee75dbfaf803532) but it is invalid
+	
+		driver = new ChromeDriver();
+		System.out.println(driver.getTitle());
+		//Exception in thread "main" org.openqa.selenium.NoSuchSessionException: invalid session id	
+		
+===================
+
+Difference between quit and close
+
+Incase of quit() session id will be null
+
+Incase of close() session id invalid or expired
+
+in both cases we have to open the broswer again
+
+	
+		
