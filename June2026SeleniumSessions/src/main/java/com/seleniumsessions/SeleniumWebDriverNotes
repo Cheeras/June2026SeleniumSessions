@@ -1,0 +1,80 @@
+In Selenium1,Selenium2 we are download the .exe(chromdriver.exe) as binary files and place it 
+broswer drivers folder of the project (which is manual step)
+
+like 
+chromdriver.exe for chrome broswer
+gechokedriver.exe for the firefox broswer
+edgedriver.exe for the edge broswer 
+============================
+Problem in selenium 1 and 2:
+============================
+let take example we are using chrome broswer version 97 for running automation
+script
+
+we are mainting the .exe version of the 97 in our local
+
+lets suppose after 10 days google chrome has updated the broswer version to 98 
+
+when we are trying to run now automation scripts will fail why because
+your broswer version is 98 and chromedriver.exe binary version is 97 which is not compatable
+
+then we need to do we need to download the 98 version of the .exe file and update in your project
+
+....so on same process need to repeat when ever there is change in the broswer version 
+same is applicable for the firefox and edgebroswers as well 
+
+for Safaribroswer .exe file is not created by the Apple becuase safari broswer version will not change 
+very frequently. it will change in once in 6 months 
+
+Again the safaribroswer.exe will created by the seleniumTeam only not from the apple team
+
+Till selenium 1 and selenium 2 creation of the binary file(.exe) have to taken care by the selenium
+there is 2-3 days delay in creation of the .exe file for respective broswer version when ever there is
+new broswer version released
+
+In order avoid this delay SeleniumTeam has requested the respective vendors to take of the .exe files
+release them along the new broswer version(from Selenium 3 on words)
+
+===================================================
+From Selenium 3 on words selenium has given task of creating the .exe file for the respective vendor
+
+chromdriver.exe for google
+gechokedriver.exe for the firefox team
+edgedriver.exe for the microsoft edge team  
+
+is the problem solved still yes or no
+
+No right we have a manual step of downloading the .exe file and update in the project
+Note:Selenium 1,selenium 2 and Selenium 3 used the JSON wire protocal internally communcation from the 
+client code(testcases) to actual broswers
+==============================================================
+In order to avoid this manual step from the Selenium 4.6 onwords introduced SeleniumManager 
+
+How SeleniumManager is working internally:
+=========================================
+Now vendors are updating the respective binary files(.exe) under the Dashboard 
+called CFT(Chrome for Testing)
+here is the link for the same
+https://googlechromelabs.github.io/chrome-for-testing/
+
+SeleniumManager will download the respective .exe based on the OperatingSystem and 
+broswer of the local system and place it in the C:\Users\Shankar<respectiveusername>\.cache
+under .cache folder 
+Note: .cache folder is already present 
+
+under this .cache folder seleniumManager will create the folder called "selenium" and place the 
+respective .exe files under this
+
+Note: SeleniumManager has backword compatibility as well 
+
+===================
+Selenium 5:
+WebDriverBiDi
+not fully implemented as of now
+
+
+
+
+
+
+
