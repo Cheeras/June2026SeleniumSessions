@@ -1,11 +1,14 @@
 package com.seleniumsessions;
 
+import java.net.MalformedURLException;
+import java.net.URL;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class GetvstoMethods {
+public class TomethodURL {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws MalformedURLException {
 
 		/*
 		 * Important interview Question 
@@ -25,22 +28,13 @@ public class GetvstoMethods {
 		 * 
 		 * */
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://www.google.com/");
-		System.out.println(driver.getTitle());
+//		driver.get("https://www.google.com/");
+//		System.out.println(driver.getTitle());
+		URL baseUrl = new URL("https://www.flipkart.com");
+		driver.navigate().to(baseUrl);
 		
-		driver.navigate().to("https://www.selenium.dev/");
-		System.out.println(driver.getTitle());
 		
-		driver.navigate().back();
-		System.out.println(driver.getTitle());
 		
-		driver.navigate().forward();
-		System.out.println(driver.getTitle());
-		
-		driver.navigate().back();
-		System.out.println(driver.getTitle());
-		
-		driver.navigate().refresh();//used to refresh the page
 		
 	}
 
