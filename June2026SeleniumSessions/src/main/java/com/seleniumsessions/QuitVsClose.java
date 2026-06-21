@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 /***
  * Please refer the QuitvsCloseCaseStudy notes
+ * 
  * ***/
 public class QuitVsClose {
 
