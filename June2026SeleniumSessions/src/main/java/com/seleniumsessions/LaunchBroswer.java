@@ -10,7 +10,7 @@ public class LaunchBroswer {
 		ChromeDriver driver = new ChromeDriver();
 		
 		//enter the URL
-		driver.get("www.google.com/");
+		driver.get("google.com/");
 		
 		//get the title of the page
 		String actTitle = driver.getTitle();

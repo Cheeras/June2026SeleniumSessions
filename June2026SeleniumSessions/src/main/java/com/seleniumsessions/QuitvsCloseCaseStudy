@@ -15,7 +15,7 @@ Case 1: driver.quit()
 		System.out.println(url);
 		ChromeDriver: chrome on windows (6f08dbcbe29aefeae508119c66c8d9d2)
 	
-		driver.quit();//after execution of this statement driver will become null
+		driver.quit();//after execution of this statement Session ID will become null
 		ChromeDriver: chrome on windows (null)
 		
 		/*
