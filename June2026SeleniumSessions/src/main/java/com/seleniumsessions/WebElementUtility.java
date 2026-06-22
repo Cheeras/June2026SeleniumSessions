@@ -29,5 +29,10 @@ public class WebElementUtility {
 		System.out.println("element text ==>"+eleText);
 		return eleText;
 	}
+	
+	public boolean doElementDisplayed(By locator) {
+		boolean isDisplayed = getElement(locator).isDisplayed();
+		return isDisplayed;
+	}
 
 }
