@@ -6,7 +6,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
+/*
+ * What is the purpose the BroswerUtils Class we can write
+ * 1.Reusable methods we don't need to write the
+ * repeated code.
+ * 
+ * 2.Easy to debug any problem for the chrome we have fix at once place, 
+ * lets suppose we have not create this util class we might have to initialise the broswer 50 places
+ * if any issue occures we need update the code 50 place in order a void this we will prefer to write 
+ * initDriver() method 
+ * 
+ * 
+ * */
 /**
  * @author Shankar Cheerala
  */
@@ -19,6 +30,8 @@ public class BroswerUtils {
 	 * @param broswerName
 	 * @return it returns the driver
 	 */
+	//The method creates a browser driver object and returns it to the caller
+	//Without returning the driver, the caller cannot directly use the created browser instance.
 	public WebDriver initDriver(String broswerName) {
 		System.out.println("Broswer Name :: "+broswerName);
 	switch (broswerName.trim().toLowerCase()) {
