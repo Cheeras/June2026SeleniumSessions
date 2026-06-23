@@ -12,7 +12,18 @@ public class WebElementUtility {
 		this.driver = driver;
 	}
 
+	private void nullCheck(CharSequence... value) {
+		if(value == null) {
+			throw new RuntimeException("===Value can not be null=====");
+		}
+	}
 	public void doSendKeys(By locator, String value) {
+		nullCheck(value);
+		this.getElement(locator).sendKeys(value);
+	}
+	
+	public void doSendKeys(By locator, CharSequence... value) {
+		nullCheck(value);
 		this.getElement(locator).sendKeys(value);
 	}
 
@@ -20,6 +31,15 @@ public class WebElementUtility {
 		getElement(locator).click();
 	}
 
+	public String getElementDomPropertyValue(By locator,String propName) {
+		nullCheck(propName);
+		return getElement(locator).getDomProperty(propName);
+	}
+	public String getElementDomAttributeValue(By locator,String attrName) {
+		nullCheck(attrName);
+		return getElement(locator).getDomAttribute(attrName);
+	}
+	
 	public WebElement getElement(By locator) {
 		return driver.findElement(locator);
 	}
